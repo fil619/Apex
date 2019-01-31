@@ -19,19 +19,18 @@ class AutocompletController extends Controller
      if($request->get('query'))
      {
       $query = $request->get('query');
-      $data = DB::table('apps_countries')
-        ->where('country_name', 'LIKE', "%{$query}%")
+      $data = DB::table('direct_ledgers')
+        ->where('ledger', 'LIKE', "%{$query}%")
         ->get();
-        return $data;
-      // $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
-      // foreach($data as $row)
-      // {
-      //  $output .= '
-      //  <li><a href="#">'.$row->country_name.'</a></li>
-      //  ';
-      // }
-      // $output .= '</ul>';
-      // echo $output;
+      $output = '<ul class="dropdown-menu" style="display:block; position:relative;">';
+      foreach($data as $row)
+      {
+       $output .= '
+       <li><a href="#">'.$row->ledger.'</a></li>
+       ';
+      }
+      $output .= '</ul>';
+      echo $output;
      }
     }
 

@@ -2,7 +2,7 @@
     <div >
                 <div class="modal-content">
                     <div class="modal-header"  style="background:#d50000">
-                        <h4 class="modal-title" style="color:white">Indirect Expense</h4>
+                        <h4 class="modal-title" style="color:white">Direct Expense</h4>
                     </div>
                     <div class="modal-body">
 
@@ -20,11 +20,11 @@
                               <div class="modal-content">
                                 <div class="modal-header">
                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                  <h4 class="modal-title"  >Add Indirect Ledgers</h4>
+                                  <h4 class="modal-title"  >Add Direct dledgers</h4>
                                 </div>
                                 <div class="modal-body">
                                     <label for="addledger" style="font-size: 15px;">Ledger:</label>
-                                    <input type="text" name="ledger" id="ledger" placeholder="Add Ledger"  class="input-sm"  v-model="ledgers.ledger">
+                                    <input type="text" name="ledger" id="ledger" placeholder="Add Ledger"  class="input-sm"  v-model="dledgers.ledger">
                                     <button type="button" style="font-size: 15px;" name="button" class="btn-primary" @click="createLeger">Add</button>
                                 </div>
                                 <div class="modal-footer">
@@ -47,7 +47,7 @@
                             </div>
                             <div class="modal-body">
 
-                              <table class="table table-bordered table-striped table-responsive" v-if="ledgers.length > 0">
+                              <table class="table table-bordered table-striped table-responsive" v-if="dledgers.length > 0">
                                   <tbody>
                                       <tr>
                                           <th>
@@ -60,22 +60,21 @@
                                               Action
                                           </th>
                                       </tr>
-                                      <tr v-for="(ledgers, index) in ledgers">
-                                          <td>{{ index + 1 }}</td>
-
+                                      <tr v-for="(dledger, index) in dledgers">
+                                        <td>{{ index + 1 }}</td>
                                           <td v-if="ledgerindex == index ">
-                                              <input type="text" name="" v-model="ledgers.ledger">
+                                              <input type="text" name="" v-model="dledger.ledger">
                                               <button @click="updateled(index)" class="btn-xs btn-danger">Update</button>
                                               <button @click="cancelled" class="btn-xs btn-danger">Cancel</button>
 
                                           </td>
                                           <td v-else>
-                                              <input type="text" name="" v-model="ledgers.ledger" disabled>
+                                              <input type="text" name="" v-model="dledger.ledger" disabled>
                                           </td>
 
                                           <td>
                                             <button @click="EditLedger(index)" class="btn-xs btn-warning">Edit</button>
-                                              <button @click="DeleteLedger(ledgers.id)" class="btn-xs btn-danger">Delete</button>
+                                              <button @click="DeleteLedger(dledger.id)" class="btn-xs btn-danger">Delete</button>
                                           </td>
                                       </tr>
                                   </tbody>
@@ -95,7 +94,7 @@
                             <label for="title">Type:</label>
                             <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#ADDModal">Add</button>
                             <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#viewModal" @click="readLedger">View/Edit</button>
-                            <input type="text" name="ledger_name" id="ledger_name" class="form-control" placeholder="Type" v-model="posts.type" />
+                            <input type="text" name="ledger_name" id="ledger_name" class="form-control" placeholder="Type" v-model="direct.type" />
                             <div id="ledgerList">
                             </div>
 
@@ -104,19 +103,19 @@
                         <div class="form-group">
                             <label for="title" >Amount:</label>
                             <input type="number" name="amount" id="amount" placeholder="Enter Amount" class="form-control"
-                                   v-model="posts.amount">
+                                   v-model="direct.amount">
                         </div>
 
                         <div class="form-group">
                             <label for="title">Date:</label>
                             <input type="date" name="date" id="date" class="form-control"
-                                   v-model="posts.date">
+                                   v-model="direct.date">
                         </div>
 
                         <div class="form-group">
                             <label for="description">Description:</label>
                             <textarea name="description" id="description" cols="30" rows="5" class="form-control"
-                                      placeholder="Naration" v-model="posts.description"></textarea>
+                                      placeholder="Naration" v-model="direct.description"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -131,20 +130,20 @@
     export default {
         data(){
             return {
-                posts: {
+                direct: {
                   type:'',
                   amount:'',
                   date:'',
                   description: ''
                 },
-                ledgers:{
+                dledgers:{
                   ledger:'',
                   id: '',
                 },
                 validated: false ,
                 ledgerindex :100000000,
                 errors: [],
-                posts: [],
+                direct: [],
                 update_post: {},
                 update_ledger: {}
             }
@@ -160,12 +159,11 @@
             },
             createPost()
             {
-
-                axios.post('/indirect', {
-                  type: this.posts.type,
-                  amount: this.posts.amount,
-                  date: this.posts.date,
-                  description: this.posts.description,
+                axios.post('/direct', {
+                  type: this.direct.type,
+                  amount: this.direct.amount,
+                  date: this.direct.date,
+                  description: this.direct.description,
                 })
                     .then(response => {
 
@@ -175,7 +173,7 @@
                     })
                     .catch(error => {
                         this.errors = [];
-                        if (error.response.data.errors.title) {
+                        if (error.response.data.errors.type) {
                             this.errors.push(error.response.data.errors.title[0]);
                         }
 
@@ -186,23 +184,23 @@
             },
             reset()
             {
-                this.posts.type = '';
-                this.posts.amount = '';
-                this.posts.date = '';
-                this.posts.description = '';
+                this.direct.type = '';
+                this.direct.amount = '';
+                this.direct.date = '';
+                this.direct.description = '';
             },
             createLeger()
             {
-              axios.post('/ledger', {
-              ledger: this.ledgers.ledger,
+              axios.post('/directledger', {
+              ledger: this.dledgers.ledger,
             });
             },
             readLedger()
             {
-              axios.get('/ledger')
+              axios.get('/directledger')
                   .then(response => {
 
-                      this.ledgers = response.data.ledger;
+                      this.dledgers = response.data.dledger;
                   });
             },
             EditLedger(index)
@@ -217,12 +215,14 @@
             },
             updateled(index)
             {
-              this.update_ledger = this.ledgers[index];
-                axios.patch('/ledger/' + this.update_ledger.id, {
+              this.update_ledger = this.dledgers[index];
+                axios.patch('/directledger/' + this.update_ledger.id, {
                   ledger: this.update_ledger.ledger,
                   Id: this.update_ledger.id
                 })
                     .then(response => {
+                      this.ledgerindex = 1000000000 ;
+                      this.readLedger();
 
 
                     })
@@ -234,9 +234,9 @@
 
                     });
             },
-            DeleteLedger(ledgers)
+            DeleteLedger(dledgers)
             {
-              axios.delete('/ledger/' + ledgers)
+              axios.delete('/directledger/' + dledgers)
               .then(response => {
                 this.readLedger();
               })
@@ -250,7 +250,7 @@
                      {
                       var _token = $('input[name="_token"]').val();
                       $.ajax({
-                       url:"autocomplete/fetch",
+                       url:"autocomplet/fetch",
                        method:"POST",
                        data:{query:query, _token:_token},
                        success:function(data){
@@ -269,7 +269,7 @@
             },
             setledgertype(type)
             {
-              this.posts.type = type ;
+              this.direct.type = type ;
             }
         }
     }

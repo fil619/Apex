@@ -1086,11 +1086,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Indirect__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Indirect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Indirect__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Direct__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Direct___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_Direct__);
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 window.Vue = __webpack_require__(36);
 __webpack_require__(12);
+
 
 
 
@@ -1100,12 +1103,17 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
         path: '/indirect',
         name: 'indirect',
         component: __WEBPACK_IMPORTED_MODULE_2__components_Indirect___default.a
+    }, {
+        path: '/direct',
+        name: 'direct',
+        component: __WEBPACK_IMPORTED_MODULE_3__components_Direct___default.a
     }]
 });
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('example', __webpack_require__(39));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('posts', __webpack_require__(50));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('indirect', __webpack_require__(53));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('direct', __webpack_require__(76));
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: '#app',
@@ -45001,7 +45009,7 @@ var render = function() {
                       staticStyle: { "font-size": "15px" },
                       attrs: { for: "addledger" }
                     },
-                    [_vm._v("Type:")]
+                    [_vm._v("Ledger:")]
                   ),
                   _vm._v(" "),
                   _c("input", {
@@ -48119,6 +48127,899 @@ if (inBrowser && window.Vue) {
 
 /* harmony default export */ __webpack_exports__["a"] = (VueRouter);
 
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(77)
+}
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(79)
+/* template */
+var __vue_template__ = __webpack_require__(80)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-96e9d740"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Direct.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-96e9d740", Component.options)
+  } else {
+    hotAPI.reload("data-v-96e9d740", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(78);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(46)("442aa51e", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-96e9d740\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Direct.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-96e9d740\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Direct.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(45)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.btn[data-v-96e9d740] {\n  float: right;\n  margin-left: 10px;\n  margin-right: 10px;\n  margin-bottom:  5px;\n}\n.btn-success[data-v-96e9d740] {\n  font-family: Raleway-SemiBold;\n  font-size: 13px;\n  color: rgba(103, 192, 103, 0.75);\n  letter-spacing: 1px;\n  line-height: 15px;\n  border: 2px solid rgba(103, 192, 103, 0.75);\n  border-radius: 40px;\n  background: transparent;\n  -webkit-transition: all 0.3s ease 0s;\n  transition: all 0.3s ease 0s;\n}\n.btn-success[data-v-96e9d740]:hover {\n  color: #FFF;\n  background: rgb(103, 192, 103, 0.75);\n  border: 2px solid rgb(103, 192, 103, 0.75);\n}\n#ledgerList[data-v-96e9d740]\n{\n  position: absolute;\n}\ntd[data-v-96e9d740]\n{\n  font-size: 15px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 79 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        var _ref;
+
+        return _ref = {
+            direct: {
+                type: '',
+                amount: '',
+                date: '',
+                description: ''
+            },
+            dledgers: {
+                ledger: '',
+                id: ''
+            },
+            validated: false,
+            ledgerindex: 100000000,
+            errors: []
+        }, _defineProperty(_ref, 'direct', []), _defineProperty(_ref, 'update_post', {}), _defineProperty(_ref, 'update_ledger', {}), _ref;
+    },
+    mounted: function mounted() {
+        this.AutoComplete();
+    },
+
+    methods: {
+        initAddPost: function initAddPost() {
+            this.errors = [];
+        },
+        createPost: function createPost() {
+            var _this = this;
+
+            axios.post('/direct', {
+                type: this.direct.type,
+                amount: this.direct.amount,
+                date: this.direct.date,
+                description: this.direct.description
+            }).then(function (response) {
+
+                _this.reset();
+            }).catch(function (error) {
+                _this.errors = [];
+                if (error.response.data.errors.type) {
+                    _this.errors.push(error.response.data.errors.title[0]);
+                }
+
+                if (error.response.data.errors.description) {
+                    _this.errors.push(error.response.data.errors.description[0]);
+                }
+            });
+        },
+        reset: function reset() {
+            this.direct.type = '';
+            this.direct.amount = '';
+            this.direct.date = '';
+            this.direct.description = '';
+        },
+        createLeger: function createLeger() {
+            axios.post('/directledger', {
+                ledger: this.dledgers.ledger
+            });
+        },
+        readLedger: function readLedger() {
+            var _this2 = this;
+
+            axios.get('/directledger').then(function (response) {
+
+                _this2.dledgers = response.data.dledger;
+            });
+        },
+        EditLedger: function EditLedger(index) {
+            this.validated = true;
+            this.ledgerindex = index;
+        },
+        cancelled: function cancelled() {
+            this.ledgerindex = 1000000000;
+        },
+        updateled: function updateled(index) {
+            var _this3 = this;
+
+            this.update_ledger = this.dledgers[index];
+            axios.patch('/directledger/' + this.update_ledger.id, {
+                ledger: this.update_ledger.ledger,
+                Id: this.update_ledger.id
+            }).then(function (response) {
+                _this3.ledgerindex = 1000000000;
+                _this3.readLedger();
+            }).catch(function (error) {
+                _this3.errors = [];
+                if (error.response.data.errors.ledger) {
+                    _this3.errors.push(error.response.data.errors.title[0]);
+                }
+            });
+        },
+        DeleteLedger: function DeleteLedger(dledgers) {
+            var _this4 = this;
+
+            axios.delete('/directledger/' + dledgers).then(function (response) {
+                _this4.readLedger();
+            });
+        },
+        AutoComplete: function AutoComplete() {
+            var vm = this;
+            $('#ledger_name').keyup(function () {
+                var query = $(this).val();
+                if (query != '') {
+                    var _token = $('input[name="_token"]').val();
+                    $.ajax({
+                        url: "autocomplet/fetch",
+                        method: "POST",
+                        data: { query: query, _token: _token },
+                        success: function success(data) {
+                            $('#ledgerList').fadeIn();
+                            $('#ledgerList').html(data);
+                        }
+                    });
+                }
+            });
+
+            $(document).on('click', 'li', function () {
+                var text = $(this).text();
+                vm.setledgertype(text);
+                $('#ledgerList').fadeOut();
+            });
+        },
+        setledgertype: function setledgertype(type) {
+            this.direct.type = type;
+        }
+    }
+});
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "modal-content" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "modal-body" }, [
+        _vm.errors.length > 0
+          ? _c("div", { staticClass: "alert alert-danger" }, [
+              _c(
+                "ul",
+                _vm._l(_vm.errors, function(error) {
+                  return _c("li", [_vm._v(_vm._s(error))])
+                }),
+                0
+              )
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "modal fade",
+            attrs: { id: "ADDModal", role: "dialog" }
+          },
+          [
+            _c("div", { staticClass: "modal-dialog" }, [
+              _c("div", { staticClass: "modal-content" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-body" }, [
+                  _c(
+                    "label",
+                    {
+                      staticStyle: { "font-size": "15px" },
+                      attrs: { for: "addledger" }
+                    },
+                    [_vm._v("Ledger:")]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.dledgers.ledger,
+                        expression: "dledgers.ledger"
+                      }
+                    ],
+                    staticClass: "input-sm",
+                    attrs: {
+                      type: "text",
+                      name: "ledger",
+                      id: "ledger",
+                      placeholder: "Add Ledger"
+                    },
+                    domProps: { value: _vm.dledgers.ledger },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.dledgers, "ledger", $event.target.value)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn-primary",
+                      staticStyle: { "font-size": "15px" },
+                      attrs: { type: "button", name: "button" },
+                      on: { click: _vm.createLeger }
+                    },
+                    [_vm._v("Add")]
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._m(2)
+              ])
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "modal fade",
+            attrs: { id: "viewModal", role: "dialog" }
+          },
+          [
+            _c("div", { staticClass: "modal-dialog" }, [
+              _c("div", { staticClass: "modal-content" }, [
+                _vm._m(3),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-body" }, [
+                  _vm.dledgers.length > 0
+                    ? _c(
+                        "table",
+                        {
+                          staticClass:
+                            "table table-bordered table-striped table-responsive"
+                        },
+                        [
+                          _c(
+                            "tbody",
+                            [
+                              _vm._m(4),
+                              _vm._v(" "),
+                              _vm._l(_vm.dledgers, function(dledger, index) {
+                                return _c("tr", [
+                                  _c("td", [_vm._v(_vm._s(index + 1))]),
+                                  _vm._v(" "),
+                                  _vm.ledgerindex == index
+                                    ? _c("td", [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: dledger.ledger,
+                                              expression: "dledger.ledger"
+                                            }
+                                          ],
+                                          attrs: { type: "text", name: "" },
+                                          domProps: { value: dledger.ledger },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                dledger,
+                                                "ledger",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass: "btn-xs btn-danger",
+                                            on: {
+                                              click: function($event) {
+                                                _vm.updateled(index)
+                                              }
+                                            }
+                                          },
+                                          [_vm._v("Update")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass: "btn-xs btn-danger",
+                                            on: { click: _vm.cancelled }
+                                          },
+                                          [_vm._v("Cancel")]
+                                        )
+                                      ])
+                                    : _c("td", [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: dledger.ledger,
+                                              expression: "dledger.ledger"
+                                            }
+                                          ],
+                                          attrs: {
+                                            type: "text",
+                                            name: "",
+                                            disabled: ""
+                                          },
+                                          domProps: { value: dledger.ledger },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                dledger,
+                                                "ledger",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        })
+                                      ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "btn-xs btn-warning",
+                                        on: {
+                                          click: function($event) {
+                                            _vm.EditLedger(index)
+                                          }
+                                        }
+                                      },
+                                      [_vm._v("Edit")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "btn-xs btn-danger",
+                                        on: {
+                                          click: function($event) {
+                                            _vm.DeleteLedger(dledger.id)
+                                          }
+                                        }
+                                      },
+                                      [_vm._v("Delete")]
+                                    )
+                                  ])
+                                ])
+                              })
+                            ],
+                            2
+                          )
+                        ]
+                      )
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _vm._m(5)
+              ])
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "title" } }, [_vm._v("Type:")]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-success btn-sm",
+              attrs: {
+                type: "button",
+                "data-toggle": "modal",
+                "data-target": "#ADDModal"
+              }
+            },
+            [_vm._v("Add")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-success btn-sm",
+              attrs: {
+                type: "button",
+                "data-toggle": "modal",
+                "data-target": "#viewModal"
+              },
+              on: { click: _vm.readLedger }
+            },
+            [_vm._v("View/Edit")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.direct.type,
+                expression: "direct.type"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              name: "ledger_name",
+              id: "ledger_name",
+              placeholder: "Type"
+            },
+            domProps: { value: _vm.direct.type },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.direct, "type", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { attrs: { id: "ledgerList" } })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "title" } }, [_vm._v("Amount:")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.direct.amount,
+                expression: "direct.amount"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "number",
+              name: "amount",
+              id: "amount",
+              placeholder: "Enter Amount"
+            },
+            domProps: { value: _vm.direct.amount },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.direct, "amount", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "title" } }, [_vm._v("Date:")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.direct.date,
+                expression: "direct.date"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "date", name: "date", id: "date" },
+            domProps: { value: _vm.direct.date },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.direct, "date", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "description" } }, [
+            _vm._v("Description:")
+          ]),
+          _vm._v(" "),
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.direct.description,
+                expression: "direct.description"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              name: "description",
+              id: "description",
+              cols: "30",
+              rows: "5",
+              placeholder: "Naration"
+            },
+            domProps: { value: _vm.direct.description },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.direct, "description", $event.target.value)
+              }
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "modal-footer" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-default",
+            attrs: { type: "button", "data-dismiss": "modal" }
+          },
+          [_vm._v("Close")]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            attrs: { type: "button" },
+            on: { click: _vm.createPost }
+          },
+          [_vm._v("Submit")]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "modal-header", staticStyle: { background: "#d50000" } },
+      [
+        _c(
+          "h4",
+          { staticClass: "modal-title", staticStyle: { color: "white" } },
+          [_vm._v("Direct Expense")]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("×")]
+      ),
+      _vm._v(" "),
+      _c("h4", { staticClass: "modal-title" }, [_vm._v("Add Direct dledgers")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-default",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Close")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("×")]
+      ),
+      _vm._v(" "),
+      _c("h4", { staticClass: "modal-title" }, [
+        _vm._v("View Indirect Ledgers")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", [
+        _vm._v(
+          "\n                                          No.\n                                      "
+        )
+      ]),
+      _vm._v(" "),
+      _c("th", [
+        _vm._v(
+          "\n                                          Type\n                                      "
+        )
+      ]),
+      _vm._v(" "),
+      _c("th", [
+        _vm._v(
+          "\n                                          Action\n                                      "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-default",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Close")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-96e9d740", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

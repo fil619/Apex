@@ -154,7 +154,7 @@
 
           <button class="dropdown-btn">Expenses   <i class="fa fa-caret-left" style="padding-top:7px ; float:right"></i></button>
           <div class="dropdown-container">
-            <p> <router-link :to="{ name: '' }">Direct Expense</router-link></p>
+            <p> <router-link :to="{ name: 'direct' }">Direct Expense</router-link></p>
             <p> <router-link :to="{ name: 'indirect' }">Indirect Expense</router-link></p>
             <p> <router-link :to="{ name: '' }">View Expenses</router-link></p>
           </div>

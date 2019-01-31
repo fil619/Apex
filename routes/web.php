@@ -21,6 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/posts', 'PostController');
 Route::resource('/indirect', 'IndirectController');
 Route::resource('/ledger', 'IndirectLedgerController');
+Route::resource('/direct', 'DirectController');
+Route::resource('/directledger', 'DirectLedgerController');	
+
 
 Route::get('/autocomplete', 'AutocompleteController@index');
 Route::post('/autocomplete/fetch', 'AutocompleteController@fetch')->name('autocomplete.fetch');
