@@ -19,10 +19,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/posts', 'PostController');
+
+Route::get('indirect/sum', 'IndirectController@sum');
+Route::get('indirect/total', 'IndirectController@total');
 Route::resource('/indirect', 'IndirectController');
+
 Route::resource('/ledger', 'IndirectLedgerController');
 Route::resource('/direct', 'DirectController');
-Route::resource('/directledger', 'DirectLedgerController');	
+Route::resource('/directledger', 'DirectLedgerController');
+
+Route::resource('/viewexpenses', 'viewexpensesController');
 
 
 Route::get('/autocomplete', 'AutocompleteController@index');

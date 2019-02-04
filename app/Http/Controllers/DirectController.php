@@ -14,10 +14,10 @@ class DirectController extends Controller
    */
    public function index()
    {
-       $posts = Indirect::get();
-       return response()->json([
-           'posts'    => $posts,
-       ], 200);
+       // $posts = Indirect::get();
+       // return response()->json([
+       //     'posts'    => $posts,
+       // ], 200);
    }
 
   /**

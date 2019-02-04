@@ -59,7 +59,7 @@
       margin-top: 52px; /* Same as the width of the sidenav */
       font-size: 20px; /* Increased text to enable scrolling */
       padding: 0px 10px;
-
+height: 100%;
     }
     .login
     {
@@ -151,12 +151,12 @@
 
         @if (!Auth::guest())
         <div class="sidenav">
-
+          <p> <router-link :to="{ name: 'dashboard' }">Dashboard</router-link></p>
           <button class="dropdown-btn">Expenses   <i class="fa fa-caret-left" style="padding-top:7px ; float:right"></i></button>
           <div class="dropdown-container">
             <p> <router-link :to="{ name: 'direct' }">Direct Expense</router-link></p>
             <p> <router-link :to="{ name: 'indirect' }">Indirect Expense</router-link></p>
-            <p> <router-link :to="{ name: '' }">View Expenses</router-link></p>
+            <p> <router-link :to="{ name: 'viewexpense' }">View Expenses</router-link></p>
           </div>
 
 
